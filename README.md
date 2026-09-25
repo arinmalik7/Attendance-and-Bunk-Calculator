@@ -5,7 +5,7 @@ A sleek, modern, SaaS-grade academic utility designed to track course lecture at
 ![HTML5](https://img.shields.io/badge/HTML5-Semantic_Architecture-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Modern_SaaS_Tokens-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
@@ -48,6 +48,7 @@ Web-Dev-Project/
 ├── style.css        # CSS custom properties, SaaS design system, responsive grid
 ├── script.js        # Mathematical formulas, real-time DOM updates & localStorage
 ├── .gitignore       # System, IDE, and temporary files exclusion
+├── LICENSE          # MIT Open Source License
 └── README.md        # Project documentation
 ```
 
