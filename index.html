@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sleek Attendance &amp; Bunk Calculator - Modern SaaS utility for tracking academic session attendance, allowable bunks, and recovery sessions.">
+  <title>Attendance &amp; Bunk Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <span class="badge-app-category">Academic Utility</span>
+    <h1>Attendance &amp; Bunk Calculator</h1>
+    <p>Track your academic attendance in real-time, compute permissible skips, or calculate exact sessions needed to hit your target.</p>
+  </header>
+
+  <main>
+    <!-- Attendance Calculator Form Card -->
+    <form id="attendance-form" novalidate>
+      <fieldset>
+        <legend>Session Details</legend>
+
+        <label for="subject-name">Semester / Subject Name</label>
+        <input 
+          type="text" 
+          id="subject-name" 
+          name="subject-name" 
+          placeholder="e.g., Operating Systems, CS301" 
+          autocomplete="off" 
+          required
+        >
+
+        <label for="total-sessions">Total Scheduled Sessions</label>
+        <input 
+          type="number" 
+          id="total-sessions" 
+          name="total-sessions" 
+          min="1" 
+          placeholder="e.g., 40" 
+          required
+        >
+
+        <label for="attended-sessions">Attended Sessions So Far</label>
+        <input 
+          type="number" 
+          id="attended-sessions" 
+          name="attended-sessions" 
+          min="0" 
+          placeholder="e.g., 32" 
+          required
+        >
+        <output id="attended-error" class="inline-error" role="alert" aria-live="assertive"></output>
+
+        <label for="target-attendance">Target Attendance %</label>
+        <input 
+          type="number" 
+          id="target-attendance" 
+          name="target-attendance" 
+          min="1" 
+          max="100" 
+          value="75" 
+          required
+        >
+
+        <section class="form-actions">
+          <button type="submit" id="calculate-btn">Calculate Attendance</button>
+          <button type="reset" id="reset-btn">Reset / Clear</button>
+        </section>
+      </fieldset>
+    </form>
+
+    <!-- Calculation Results Section -->
+    <section id="results-section" aria-labelledby="results-heading">
+      <h2 id="results-heading">Attendance Verdict</h2>
+
+      <section class="result-card">
+        <!-- Hero Stat Card -->
+        <section class="hero-stat-card">
+          <span class="hero-stat-label">Current Attendance</span>
+          <section class="hero-stat-row">
+            <output id="current-attendance-output" for="total-sessions attended-sessions" aria-live="polite">--%</output>
+            <output id="status-badge" class="status-indicator status-neutral" role="status" aria-live="polite">No Data</output>
+          </section>
+
+          <progress id="attendance-progress" value="0" max="100" aria-label="Attendance progress bar">0%</progress>
+
+          <p class="target-threshold-label">
+            Target Goal: <output id="target-display" for="target-attendance">75%</output>
+          </p>
+        </section>
+
+        <!-- Actionable Insight Pill Banner -->
+        <section id="verdict-banner" class="verdict-banner verdict-neutral">
+          <span class="status-dot" aria-hidden="true"></span>
+          <output id="verdict-output" for="total-sessions attended-sessions target-attendance" aria-live="polite">
+            Enter your session details above and click Calculate.
+          </output>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>&copy; Attendance &amp; Bunk Calculator. Keep your grades and attendance on track.</small></p>
+  </footer>
+</body>
+</html>
